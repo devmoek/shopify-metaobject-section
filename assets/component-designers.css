@@ -1,0 +1,46 @@
+.designers {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.designer {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  color: #fff;
+  padding: 20px;
+  transition: transform 0.2s;
+  border: 2px solid #1d1d1d;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.designer:hover {
+  transform: translateY(-5px);
+}
+
+.designer__img img {
+  width: 200px;
+  margin-right: 20px;
+}
+
+.designer__body h2 {
+  margin: 0;
+}
+
+@media screen and (max-width: 430px) {
+  .designer {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .designer__img {
+    text-align: left;
+    width: 100%;
+  }
+
+    .designer__img img {
+      width: 150px;
+  }
+}

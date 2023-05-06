@@ -1,0 +1,38 @@
+{{ 'component-designers.css' | asset_url | stylesheet_tag }}
+
+<div class="designers">
+  {% for designers in shop.metaobjects.designers.values %}
+    <div class="designer color-background-2 page-width">
+      <div class="designer__img">
+        <img
+          src="{{ designers.avatar | img_url: '200x' }}"
+          alt="Designer picture"
+          loading="lazy">
+      </div>
+      <div class="designer__body">
+        <h2 class="h1">{{ designers.name }}</h2>
+        <p class="desginer__body-text">
+          {{ designers.description }}
+        </p>
+        <a
+          class="button button--secondary"
+          href="{{ designers.url }}"
+          target="_blank">
+          Visit
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Designers",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Designers"
+      }
+    ]
+  }
+{% endschema %}
